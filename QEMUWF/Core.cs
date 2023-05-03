@@ -21,7 +21,7 @@ namespace QEMUWF
             trackBar.SmallChange = trackBar.Maximum / trackBar.TickFrequency;
             comboBox2.SelectedIndex = 0;
             comboBox.SelectedIndex = 0;
-            tabControl.Location = new Point(0, -22);
+            tabControl.Location = new Point(0, -25);
             tabControl.Size = new Size(438, 480);
             numericUpDown.Maximum = Environment.ProcessorCount;
         }

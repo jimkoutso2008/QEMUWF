@@ -219,7 +219,7 @@ namespace QEMUWF
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 58);
+            this.label2.Location = new System.Drawing.Point(15, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(392, 151);
             this.label2.TabIndex = 1;
@@ -229,7 +229,7 @@ namespace QEMUWF
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Location = new System.Drawing.Point(9, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(398, 32);
             this.label1.TabIndex = 0;
@@ -283,7 +283,7 @@ namespace QEMUWF
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Enabled = false;
-            this.radioButton3.Location = new System.Drawing.Point(155, 173);
+            this.radioButton3.Location = new System.Drawing.Point(155, 179);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(56, 17);
             this.radioButton3.TabIndex = 10;
@@ -295,7 +295,7 @@ namespace QEMUWF
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Enabled = false;
-            this.radioButton2.Location = new System.Drawing.Point(82, 173);
+            this.radioButton2.Location = new System.Drawing.Point(82, 179);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(56, 17);
             this.radioButton2.TabIndex = 9;
@@ -307,7 +307,7 @@ namespace QEMUWF
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(19, 173);
+            this.radioButton1.Location = new System.Drawing.Point(19, 179);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(44, 17);
             this.radioButton1.TabIndex = 8;
@@ -328,7 +328,7 @@ namespace QEMUWF
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 131);
+            this.label8.Location = new System.Drawing.Point(16, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 6;
@@ -336,7 +336,7 @@ namespace QEMUWF
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(118, 129);
+            this.numericUpDown1.Location = new System.Drawing.Point(118, 135);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             4,
             0,
@@ -360,7 +360,7 @@ namespace QEMUWF
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(118, 91);
+            this.comboBox3.Location = new System.Drawing.Point(118, 97);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(169, 21);
             this.comboBox3.TabIndex = 4;
@@ -368,7 +368,7 @@ namespace QEMUWF
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 94);
+            this.label7.Location = new System.Drawing.Point(16, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 3;
@@ -385,7 +385,7 @@ namespace QEMUWF
             "ARM64",
             "PPC",
             "PPC64"});
-            this.comboBox2.Location = new System.Drawing.Point(118, 55);
+            this.comboBox2.Location = new System.Drawing.Point(118, 61);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(169, 21);
             this.comboBox2.TabIndex = 2;
@@ -394,7 +394,7 @@ namespace QEMUWF
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 58);
+            this.label6.Location = new System.Drawing.Point(16, 64);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 1;
@@ -404,7 +404,7 @@ namespace QEMUWF
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 7);
+            this.label5.Location = new System.Drawing.Point(9, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(189, 32);
             this.label5.TabIndex = 0;
@@ -433,7 +433,7 @@ namespace QEMUWF
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 118);
+            this.textBox3.Location = new System.Drawing.Point(186, 124);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(96, 22);
             this.textBox3.TabIndex = 11;
@@ -442,7 +442,7 @@ namespace QEMUWF
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(51, 122);
+            this.label14.Location = new System.Drawing.Point(51, 128);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 13);
             this.label14.TabIndex = 10;
@@ -451,7 +451,7 @@ namespace QEMUWF
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(51, 213);
+            this.label13.Location = new System.Drawing.Point(51, 219);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(153, 13);
             this.label13.TabIndex = 9;
@@ -460,7 +460,7 @@ namespace QEMUWF
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(271, 231);
+            this.button1.Location = new System.Drawing.Point(271, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 22);
             this.button1.TabIndex = 8;
@@ -471,7 +471,7 @@ namespace QEMUWF
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(54, 231);
+            this.textBox2.Location = new System.Drawing.Point(54, 237);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(212, 22);
             this.textBox2.TabIndex = 7;
@@ -479,7 +479,7 @@ namespace QEMUWF
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(54, 149);
+            this.checkBox1.Location = new System.Drawing.Point(54, 155);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(184, 17);
             this.checkBox1.TabIndex = 6;
@@ -489,7 +489,7 @@ namespace QEMUWF
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(51, 94);
+            this.label12.Location = new System.Drawing.Point(51, 100);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(132, 13);
             this.label12.TabIndex = 5;
@@ -497,7 +497,7 @@ namespace QEMUWF
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(186, 90);
+            this.numericUpDown2.Location = new System.Drawing.Point(186, 96);
             this.numericUpDown2.Minimum = new decimal(new int[] {
             2,
             0,
@@ -515,7 +515,7 @@ namespace QEMUWF
             // choosExistig
             // 
             this.choosExistig.AutoSize = true;
-            this.choosExistig.Location = new System.Drawing.Point(33, 182);
+            this.choosExistig.Location = new System.Drawing.Point(33, 188);
             this.choosExistig.Name = "choosExistig";
             this.choosExistig.Size = new System.Drawing.Size(107, 17);
             this.choosExistig.TabIndex = 3;
@@ -526,7 +526,7 @@ namespace QEMUWF
             // 
             this.cretNew.AutoSize = true;
             this.cretNew.Checked = true;
-            this.cretNew.Location = new System.Drawing.Point(33, 64);
+            this.cretNew.Location = new System.Drawing.Point(33, 70);
             this.cretNew.Name = "cretNew";
             this.cretNew.Size = new System.Drawing.Size(107, 17);
             this.cretNew.TabIndex = 2;
@@ -539,7 +539,7 @@ namespace QEMUWF
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 7);
+            this.label11.Location = new System.Drawing.Point(9, 13);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(312, 32);
             this.label11.TabIndex = 1;
