@@ -72,6 +72,7 @@ namespace QEMUWF
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,6 +81,7 @@ namespace QEMUWF
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -238,6 +240,7 @@ namespace QEMUWF
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage2.Controls.Add(this.trackBar2);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.trackBar1);
             this.tabPage2.Controls.Add(this.radioButton3);
@@ -261,7 +264,7 @@ namespace QEMUWF
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 320);
+            this.label10.Location = new System.Drawing.Point(23, 361);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 13);
             this.label10.TabIndex = 12;
@@ -270,7 +273,7 @@ namespace QEMUWF
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.SystemColors.Window;
-            this.trackBar1.Location = new System.Drawing.Point(15, 272);
+            this.trackBar1.Location = new System.Drawing.Point(15, 266);
             this.trackBar1.Minimum = 2;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(395, 45);
@@ -283,7 +286,7 @@ namespace QEMUWF
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Enabled = false;
-            this.radioButton3.Location = new System.Drawing.Point(155, 179);
+            this.radioButton3.Location = new System.Drawing.Point(319, 133);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(56, 17);
             this.radioButton3.TabIndex = 10;
@@ -295,7 +298,7 @@ namespace QEMUWF
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Enabled = false;
-            this.radioButton2.Location = new System.Drawing.Point(82, 179);
+            this.radioButton2.Location = new System.Drawing.Point(319, 96);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(56, 17);
             this.radioButton2.TabIndex = 9;
@@ -307,7 +310,7 @@ namespace QEMUWF
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Enabled = false;
-            this.radioButton1.Location = new System.Drawing.Point(19, 179);
+            this.radioButton1.Location = new System.Drawing.Point(319, 60);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(44, 17);
             this.radioButton1.TabIndex = 8;
@@ -319,11 +322,11 @@ namespace QEMUWF
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 209);
+            this.label9.Location = new System.Drawing.Point(9, 206);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(243, 32);
+            this.label9.Size = new System.Drawing.Size(366, 32);
             this.label9.TabIndex = 7;
-            this.label9.Text = "Select your RAM size";
+            this.label9.Text = "Select your RAM and VRAM size";
             // 
             // label8
             // 
@@ -406,9 +409,9 @@ namespace QEMUWF
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(9, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 32);
+            this.label5.Size = new System.Drawing.Size(275, 32);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Select your CPU";
+            this.label5.Text = "Hardware configuration";
             // 
             // tabPage3
             // 
@@ -565,6 +568,17 @@ namespace QEMUWF
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             // 
+            // trackBar2
+            // 
+            this.trackBar2.BackColor = System.Drawing.SystemColors.Window;
+            this.trackBar2.Location = new System.Drawing.Point(15, 312);
+            this.trackBar2.Minimum = 2;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(395, 45);
+            this.trackBar2.SmallChange = 2;
+            this.trackBar2.TabIndex = 13;
+            this.trackBar2.Value = 2;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,6 +606,7 @@ namespace QEMUWF
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -639,5 +654,6 @@ namespace QEMUWF
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TrackBar trackBar2;
     }
 }
