@@ -12,7 +12,7 @@ namespace QEMUWF
         public static string qemuPath = (string)Properties.Settings.Default.qemuPath;
         public static DirectoryInfo dinfo = new DirectoryInfo(qemuPath);
         public static ComputerInfo info = new ComputerInfo();
-        public static void SetStaticControls(TrackBar trackBar, TrackBar trackBar1, ComboBox comboBox, ComboBox comboBox2, TabControl tabControl, NumericUpDown numericUpDown)
+        public static void SetStaticControls(TrackBar trackBar, TrackBar trackBar1, ComboBox comboBox, ComboBox comboBox1, ComboBox comboBox2, TabControl tabControl, NumericUpDown numericUpDown)
         {
             var f = dinfo.GetFiles("qemu-system-*.exe");
             ulong h = info.TotalPhysicalMemory / (1024 * 1024);
@@ -40,6 +40,7 @@ namespace QEMUWF
             trackBar1.SmallChange = trackBar1.Maximum / trackBar1.TickFrequency;
             trackBar1.Minimum = 2;
             comboBox.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             tabControl.Location = new Point(0, -25);
             tabControl.Size = new Size(438, 480);

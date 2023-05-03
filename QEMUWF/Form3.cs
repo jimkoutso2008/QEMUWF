@@ -8,7 +8,7 @@ namespace QEMUWF
         public Form3()
         {
             InitializeComponent();
-            Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, tabControl1, numericUpDown1);
+            Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, comboBox4, tabControl1, numericUpDown1);
         }
 
         private void Form3_Load(object sender, EventArgs e)
