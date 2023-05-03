@@ -9,9 +9,8 @@ namespace QEMUWF
 {
     internal class Core
     {
-        public static DirectoryInfo dinfo = new DirectoryInfo
-            (Path.Combine(Path.GetPathRoot(Environment.GetEnvironmentVariable("windir")), "program files", "qemu"));
-
+        public static string qemuPath = (string)Properties.Settings.Default.qemuPath;
+        public static DirectoryInfo dinfo = new DirectoryInfo(qemuPath);
         public static ComputerInfo info = new ComputerInfo();
         public static void SetStaticControls(TrackBar trackBar, TrackBar trackBar1, ComboBox comboBox, ComboBox comboBox2, TabControl tabControl, NumericUpDown numericUpDown)
         {
