@@ -28,7 +28,7 @@ namespace QEMUWF
                     v = (ulong)(vram / 1024 * 1024);
                 }
             }
-            trackBar1.Maximum = (int)v;
+            trackBar1.Maximum = Math.Abs((int)v);
             trackBar1.TickFrequency = 128;
             trackBar1.SmallChange = trackBar1.Maximum / trackBar1.TickFrequency;
             trackBar1.Minimum = 2;
