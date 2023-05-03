@@ -59,19 +59,19 @@ namespace QEMUWF
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.choosExistig = new System.Windows.Forms.RadioButton();
+            this.cretNew = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cretNew = new System.Windows.Forms.RadioButton();
-            this.choosExistig = new System.Windows.Forms.RadioButton();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -158,6 +158,7 @@ namespace QEMUWF
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.textBox1);
@@ -170,7 +171,6 @@ namespace QEMUWF
             this.tabPage1.Size = new System.Drawing.Size(430, 423);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -412,6 +412,7 @@ namespace QEMUWF
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage3.Controls.Add(this.textBox3);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.label13);
@@ -429,60 +430,70 @@ namespace QEMUWF
             this.tabPage3.Size = new System.Drawing.Size(430, 423);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // textBox3
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(430, 423);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.textBox3.Location = new System.Drawing.Point(186, 118);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(96, 22);
+            this.textBox3.TabIndex = 11;
+            this.textBox3.Text = "qcow2";
             // 
-            // tabPage5
+            // label14
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(430, 423);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(51, 122);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(46, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Format:";
             // 
-            // label11
+            // label13
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(10, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(312, 32);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Select or create virtual disk";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(51, 213);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(153, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Browse for a virtual disk file:";
             // 
-            // cretNew
+            // button1
             // 
-            this.cretNew.AutoSize = true;
-            this.cretNew.Checked = true;
-            this.cretNew.Location = new System.Drawing.Point(33, 64);
-            this.cretNew.Name = "cretNew";
-            this.cretNew.Size = new System.Drawing.Size(107, 17);
-            this.cretNew.TabIndex = 2;
-            this.cretNew.TabStop = true;
-            this.cretNew.Text = "Create new disk";
-            this.cretNew.UseVisualStyleBackColor = true;
-            this.cretNew.CheckedChanged += new System.EventHandler(this.cretNew_CheckedChanged);
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(271, 231);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 22);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // choosExistig
+            // textBox2
             // 
-            this.choosExistig.AutoSize = true;
-            this.choosExistig.Location = new System.Drawing.Point(33, 182);
-            this.choosExistig.Name = "choosExistig";
-            this.choosExistig.Size = new System.Drawing.Size(107, 17);
-            this.choosExistig.TabIndex = 3;
-            this.choosExistig.Text = "Choose existing";
-            this.choosExistig.UseVisualStyleBackColor = true;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(54, 231);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(212, 22);
+            this.textBox2.TabIndex = 7;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(54, 149);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(184, 17);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Allocate all the disk space now";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(51, 94);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(132, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Size of the disk (in MBs):";
             // 
             // numericUpDown2
             // 
@@ -501,69 +512,58 @@ namespace QEMUWF
             0,
             0});
             // 
-            // label12
+            // choosExistig
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(51, 94);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(132, 13);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Size of the disk (in MBs):";
+            this.choosExistig.AutoSize = true;
+            this.choosExistig.Location = new System.Drawing.Point(33, 182);
+            this.choosExistig.Name = "choosExistig";
+            this.choosExistig.Size = new System.Drawing.Size(107, 17);
+            this.choosExistig.TabIndex = 3;
+            this.choosExistig.Text = "Choose existing";
+            this.choosExistig.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cretNew
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(54, 149);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(184, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Allocate all the disk space now";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cretNew.AutoSize = true;
+            this.cretNew.Checked = true;
+            this.cretNew.Location = new System.Drawing.Point(33, 64);
+            this.cretNew.Name = "cretNew";
+            this.cretNew.Size = new System.Drawing.Size(107, 17);
+            this.cretNew.TabIndex = 2;
+            this.cretNew.TabStop = true;
+            this.cretNew.Text = "Create new disk";
+            this.cretNew.UseVisualStyleBackColor = true;
+            this.cretNew.CheckedChanged += new System.EventHandler(this.cretNew_CheckedChanged);
             // 
-            // textBox2
+            // label11
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(54, 231);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 22);
-            this.textBox2.TabIndex = 7;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(312, 32);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Select or create virtual disk";
             // 
-            // button1
+            // tabPage4
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(271, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 22);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(430, 423);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
             // 
-            // label13
+            // tabPage5
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(51, 213);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(153, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Browse for a virtual disk file:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(51, 122);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 13);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "Format:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(186, 118);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(96, 22);
-            this.textBox3.TabIndex = 11;
-            this.textBox3.Text = "qcow2";
+            this.tabPage5.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(430, 423);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
             // 
             // Form3
             // 
