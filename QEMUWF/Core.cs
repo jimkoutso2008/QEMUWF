@@ -21,7 +21,7 @@ namespace QEMUWF
 
             for (int i=0; i<f.Length; i++)
             {
-                comboBox2.Items.Add(f[i].Name.Replace(".exe",""));
+                comboBox2.Items.Add(f[i].Name.Replace(".exe","").Replace("qemu-system-",""));
             }
 
             foreach (ManagementObject mo in new ManagementObjectSearcher("select AdapterRAM from Win32_VideoController").Get())
