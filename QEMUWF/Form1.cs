@@ -16,21 +16,16 @@ namespace QEMUWF
             InitializeComponent();
         }
 
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form3 j = new Form3();
-            j.Show();
+            j.ShowDialog();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About j = new About();
-            j.Show();
+            j.ShowDialog();
         }
     }
 }
