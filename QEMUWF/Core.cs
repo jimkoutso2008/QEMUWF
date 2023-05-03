@@ -1,32 +1,48 @@
 ﻿using Microsoft.VisualBasic.Devices;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
+using System.Management;
 using System.Windows.Forms;
+
 namespace QEMUWF
 {
-    class Core
+    internal class Core
     {
-        public static void SetStaticControls(TrackBar trackBar, ComboBox comboBox, ComboBox comboBox2, TabControl tabControl, NumericUpDown numericUpDown)
+        public static void SetStaticControls(TrackBar trackBar, TrackBar trackBar1, ComboBox comboBox, ComboBox comboBox2, TabControl tabControl, NumericUpDown numericUpDown)
         {
             ComputerInfo info = new ComputerInfo();
             ulong h = info.TotalPhysicalMemory;
             h = h / (1024 * 1024);
+
             trackBar.Minimum = 2;
             trackBar.Maximum = (int)h;
             trackBar.TickFrequency = 128;
             trackBar.SmallChange = trackBar.Maximum / trackBar.TickFrequency;
+            ulong v = h;
+            foreach (ManagementObject mo in new ManagementObjectSearcher("select AdapterRAM from Win32_VideoController").Get())
+            {
+                var vram = mo.Properties["AdapterRAM"].Value as ulong?;
+                if (vram.HasValue)
+                {
+                    v = (ulong)(vram / 1024 * 1024);
+                }
+            }
+            trackBar1.Maximum = (int)v;
+            trackBar1.TickFrequency = 128;
+            trackBar1.SmallChange = trackBar1.Maximum / trackBar1.TickFrequency;
+            trackBar1.Minimum = 2;
+            trackBar1.Maximum = (int)h;
+
             comboBox2.SelectedIndex = 0;
             comboBox.SelectedIndex = 0;
             tabControl.Location = new Point(0, -25);
             tabControl.Size = new Size(438, 480);
             numericUpDown.Maximum = Environment.ProcessorCount;
         }
-        public static void SetDynamicControls(bool isCombox, bool isTrackbar, ComboBox comboBox, ComboBox comboBox2, 
-                RadioButton radioButton1, RadioButton radioButton2, RadioButton radioButton3, TrackBar trackBar1, Label label10)
+
+        public static void SetDynamicControls(bool isCombox, bool isTrackbar, bool isTrackbar2, ComboBox comboBox, ComboBox comboBox2,
+                RadioButton radioButton1, RadioButton radioButton2, RadioButton radioButton3, TrackBar trackBar, TrackBar trackBar1, Label label, Label label1)
         {
             if (isCombox)
             {
@@ -57,10 +73,15 @@ namespace QEMUWF
             }
             if (isTrackbar)
             {
-                label10.Text = "Selected RAM: " + trackBar1.Value.ToString() + " MB";
+                label.Text = "Selected RAM: " + trackBar.Value.ToString() + " MB";
+            }
+            if (isTrackbar2)
+            {
+                label1.Text = "Selected Video RAM: " + trackBar1.Value.ToString() + " MB";
             }
         }
-        public static void SetDynamicControls2(bool diskSelec, RadioButton newdisk, RadioButton existig, Label sizeLbl, Label Formatlbl, NumericUpDown nmrSize, 
+
+        public static void SetDynamicControls2(bool diskSelec, RadioButton newdisk, RadioButton existig, Label sizeLbl, Label Formatlbl, NumericUpDown nmrSize,
                 TextBox formatTxt, TextBox pathTxt, Button brsButton, CheckBox allocChexbox)
         {
             if (diskSelec)
@@ -86,10 +107,10 @@ namespace QEMUWF
                 }
             }
         }
+
         public static void Navigate(int direction, TabControl tabControl)
         {
-
-            if (direction==1)
+            if (direction == 1)
             {
                 if (tabControl.SelectedIndex != tabControl.TabCount - 1) tabControl.SelectedIndex++;
             }
