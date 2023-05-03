@@ -426,13 +426,6 @@ namespace QEMUWF
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "i386",
-            "x86_64",
-            "ARM32",
-            "ARM64",
-            "PPC",
-            "PPC64"});
             this.comboBox2.Location = new System.Drawing.Point(118, 61);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(169, 21);

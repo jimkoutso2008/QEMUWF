@@ -9,17 +9,21 @@ namespace QEMUWF
 {
     internal class Core
     {
+        public static DirectoryInfo dinfo = new DirectoryInfo
+            (Path.Combine(Path.GetPathRoot(Environment.GetEnvironmentVariable("windir")), "program files", "qemu"));
+
+        public static ComputerInfo info = new ComputerInfo();
         public static void SetStaticControls(TrackBar trackBar, TrackBar trackBar1, ComboBox comboBox, ComboBox comboBox2, TabControl tabControl, NumericUpDown numericUpDown)
         {
-            ComputerInfo info = new ComputerInfo();
-            ulong h = info.TotalPhysicalMemory;
-            h = h / (1024 * 1024);
-
-            trackBar.Minimum = 2;
-            trackBar.Maximum = (int)h;
-            trackBar.TickFrequency = 128;
-            trackBar.SmallChange = trackBar.Maximum / trackBar.TickFrequency;
+            var f = dinfo.GetFiles("qemu-system-*.exe");
+            ulong h = info.TotalPhysicalMemory / (1024 * 1024);
             ulong v = h;
+
+            for (int i=0; i<f.Length; i++)
+            {
+                comboBox2.Items.Add(f[i].Name.Replace(".exe",""));
+            }
+
             foreach (ManagementObject mo in new ManagementObjectSearcher("select AdapterRAM from Win32_VideoController").Get())
             {
                 var vram = mo.Properties["AdapterRAM"].Value as ulong?;
@@ -28,14 +32,16 @@ namespace QEMUWF
                     v = (ulong)(vram / 1024 * 1024);
                 }
             }
+            trackBar.Minimum = 2;
+            trackBar.Maximum = (int)h;
+            trackBar.TickFrequency = 128;
+            trackBar.SmallChange = trackBar.Maximum / trackBar.TickFrequency;
             trackBar1.Maximum = Math.Abs((int)v);
             trackBar1.TickFrequency = 128;
             trackBar1.SmallChange = trackBar1.Maximum / trackBar1.TickFrequency;
             trackBar1.Minimum = 2;
-            trackBar1.Maximum = (int)h;
-
-            comboBox2.SelectedIndex = 0;
             comboBox.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
             tabControl.Location = new Point(0, -25);
             tabControl.Size = new Size(438, 480);
             numericUpDown.Maximum = Environment.ProcessorCount;
@@ -46,7 +52,7 @@ namespace QEMUWF
         {
             if (isCombox)
             {
-                string[] h = File.ReadAllLines(Directory.GetCurrentDirectory()
+               /* string[] h = File.ReadAllLines(Directory.GetCurrentDirectory()
                 + @"\Resources\cpu" + comboBox.SelectedItem.ToString().ToLower() + ".cfg");
 
                 comboBox2.Items.Clear();
@@ -69,7 +75,7 @@ namespace QEMUWF
                     radioButton1.Enabled = true;
                     radioButton2.Enabled = false;
                     radioButton3.Enabled = false;
-                }
+                } */
             }
             if (isTrackbar)
             {
