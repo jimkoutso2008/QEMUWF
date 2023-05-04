@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace QEMUWF
@@ -8,11 +11,11 @@ namespace QEMUWF
         public Form3()
         {
             InitializeComponent();
-            Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, comboBox4, tabControl1, numericUpDown1);
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, comboBox4, tabControl1, numericUpDown1);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,6 +36,38 @@ namespace QEMUWF
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Core.SetDynamicControls(true, false, false, comboBox2, comboBox3, radioButton1, radioButton2, radioButton3, trackBar1, trackBar2, label10, label16);
+            comboBox3.Items.Clear();
+            string cpu = comboBox2.GetItemText(comboBox2.SelectedItem);
+            var proc = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = Path.Combine(Properties.Settings.Default.qemuPath, "qemu-system-"+cpu+".exe"),
+                    Arguments = "-cpu ?",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
+                }
+            };
+            proc.Start();
+            List<string> cpus = new List<string>();
+            while (!proc.StandardOutput.EndOfStream)
+            {
+                string line = proc.StandardOutput.ReadLine();
+                if (!line.Contains("Available CPUs:"))
+				{
+                    cpus.Add(line.Trim());
+				}
+            }
+            for (int i = 0; i < cpus.Count; i++)
+			{
+                comboBox3.Items.Add(cpus[i]);
+			}
+            try
+            {
+                comboBox3.SelectedIndex = 0;
+            }
+            catch { MessageBox.Show("no valid cpus"); }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)

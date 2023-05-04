@@ -27,5 +27,14 @@ namespace QEMUWF
             About j = new About();
             j.ShowDialog();
         }
-    }
+
+		private void toolBar1_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
+		{
+            if (e.Button.Name == "newButton")
+			{
+                Form3 j = new Form3();
+                j.ShowDialog();
+            }
+		}
+	}
 }
