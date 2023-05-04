@@ -35,30 +35,14 @@ namespace QEMUWF
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // fix j logic
             Core.SetDynamicControls(true, false, false, comboBox2, comboBox3, radioButton1, radioButton2, radioButton3, trackBar1, trackBar2, label10, label16);
             comboBox3.Items.Clear();
+            comboBox5.Items.Clear();
             string cpu = comboBox2.GetItemText(comboBox2.SelectedItem);
-            var proc = new Process
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = Path.Combine(Properties.Settings.Default.qemuPath, "qemu-system-"+cpu+".exe"),
-                    Arguments = "-cpu ?",
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true
-                }
-            };
-            proc.Start();
+            radioButton1.Enabled = radioButton2.Enabled = radioButton3.Enabled = false;
             List<string> cpus = new List<string>();
-            while (!proc.StandardOutput.EndOfStream)
-            {
-                string line = proc.StandardOutput.ReadLine();
-                if (!line.Contains("Available CPUs:"))
-				{
-                    cpus.Add(line.Trim());
-				}
-            }
+            Core.QemuInvoke(cpu, ref cpus, "Available CPUs:", "-cpu ?");
             for (int i = 0; i < cpus.Count; i++)
 			{
                 comboBox3.Items.Add(cpus[i]);
@@ -67,7 +51,35 @@ namespace QEMUWF
             {
                 comboBox3.SelectedIndex = 0;
             }
-            catch { MessageBox.Show("no valid cpus"); }
+            catch 
+            {
+                comboBox3.Items.Add("default");
+                comboBox3.SelectedIndex = 0;
+            }
+            List<string> machine = new List<string>();
+            Core.QemuInvoke(cpu, ref machine, "Supported machines are:", "-machine help");
+            for (int i = 0; i< machine.Count; i++)
+			{
+                comboBox5.Items.Add(machine[i]);
+			}
+            comboBox5.SelectedIndex = 0;
+            List<string> accel = new List<string>();
+            Core.QemuInvoke(cpu, ref accel, "Accelerators supported in QEMU binary:", "-accel ?");
+            for (int i = 0; i < accel.Count; i++)
+            {
+                if (accel[i] == "hax")
+				{
+                    radioButton2.Enabled = true;
+				}
+                else if (accel[i] == "whpx")
+				{
+                    radioButton3.Enabled = true;
+				}
+                else if (accel[i] == "tcg")
+				{
+                    radioButton1.Enabled = true;
+				}
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -102,5 +114,23 @@ namespace QEMUWF
         {
             Core.SetDynamicControls(false, false, true, comboBox2, comboBox3, radioButton1, radioButton2, radioButton3, trackBar1, trackBar2, label10, label16);
         }
-    }
+
+		private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+		{
+            comboBox4.Items.Clear();
+            string cpu = comboBox2.GetItemText(comboBox2.SelectedItem);
+            string machine = comboBox5.GetItemText(comboBox5.SelectedItem);
+            List<string> gpu = new List<string>();
+            Core.QemuInvoke(cpu, ref gpu, "n000", "-vga help -machine " + machine);
+            for (int i = 0; i < gpu.Count; i++)
+            {
+                comboBox4.Items.Add(gpu[i]);
+            }
+            try
+            {
+                comboBox4.SelectedIndex = 0;
+            }
+            catch { }
+        }
+	}
 }

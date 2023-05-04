@@ -1,8 +1,11 @@
 ﻿using Microsoft.VisualBasic.Devices;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Management;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace QEMUWF
@@ -41,7 +44,6 @@ namespace QEMUWF
             trackBar1.Minimum = 2;
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
-            comboBox4.SelectedIndex = 0;
             tabControl.Location = new Point(0, -25);
             tabControl.Size = new Size(438, 480);
             numericUpDown.Maximum = Environment.ProcessorCount;
@@ -123,6 +125,35 @@ namespace QEMUWF
             else
             {
                 if (tabControl.SelectedIndex != 0) tabControl.SelectedIndex--;
+            }
+        }
+        public static void QemuInvoke(string cpu, ref List<string> value, string whitelist, string argument)
+		{
+            var proc = new Process();
+            ProcessStartInfo si = new ProcessStartInfo
+            {
+                FileName = Path.Combine(Properties.Settings.Default.qemuPath, "qemu-system-" + cpu + ".exe"),
+                Arguments = argument,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                CreateNoWindow = true
+            };
+            proc.StartInfo = si;
+            proc.Start();
+            while (!proc.StandardOutput.EndOfStream)
+            {
+                string line = proc.StandardOutput.ReadLine();
+                // fix the regex
+                const string reduceMultiSpace = @"\s+\s+\s+\s+.+";
+                line = Regex.Replace(line, reduceMultiSpace, "");
+                if (!string.IsNullOrWhiteSpace(line) && line.Contains("Recognized CPUID flags:"))
+                {
+                    break;
+                }
+                if (!line.Contains(whitelist) && !string.IsNullOrWhiteSpace(line))
+                {
+                    value.Add(line.Trim());
+                }
             }
         }
     }
