@@ -79,6 +79,12 @@ namespace QEMUWF
         private void cretNew_CheckedChanged(object sender, EventArgs e)
         {
             Core.SetDynamicControls2(true, cretNew, choosExistig, label12, label14, numericUpDown2, textBox3, textBox2, button1, checkBox1);
+            if (cretNew.Checked)
+            {
+                comboBox6.Enabled = true;
+            }
+            else
+                comboBox6.Enabled = false;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -87,8 +93,10 @@ namespace QEMUWF
             fileDialog.Multiselect = false;
             fileDialog.Filter =
                 "QEMU Copy On Write 2 (*.qcow2)|*.qcow2|QEMU Copy On Write (*.qcow)|*.qcow|Microsoft Virtual Hard Disk (*.vhd)|*.vhd|Microsoft Virtual Hard Disk Extended (*.vhdx)|*.vhdx|Raw disk (*.raw)|*.raw|Raw disk (*.img)|*.img|All files (*.*)|*.*";
-            fileDialog.ShowDialog();
-            textBox2.Text = fileDialog.FileName;
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox2.Text = fileDialog.FileName;
+            }
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,6 +133,7 @@ namespace QEMUWF
 		private void Form3_Shown(object sender, EventArgs e)
 		{
             Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, comboBox4, tabControl1, numericUpDown1);
+            comboBox6.SelectedIndex = 0;
 		}
 	}
 }

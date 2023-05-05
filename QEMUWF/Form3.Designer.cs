@@ -34,7 +34,6 @@ namespace QEMUWF
 			this.cancel = new System.Windows.Forms.Button();
 			this.next = new System.Windows.Forms.Button();
 			this.bacc = new System.Windows.Forms.Button();
-			this.help = new System.Windows.Forms.Button();
 			this.tabControl1 = new QEMUWF.TabControlWithoutHeader();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.label4 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@ namespace QEMUWF
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.comboBox6 = new System.Windows.Forms.ComboBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
@@ -77,6 +77,7 @@ namespace QEMUWF
 			this.label11 = new System.Windows.Forms.Label();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.button2 = new System.Windows.Forms.Button();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -95,7 +96,6 @@ namespace QEMUWF
 			this.flowLayoutPanel1.Controls.Add(this.cancel);
 			this.flowLayoutPanel1.Controls.Add(this.next);
 			this.flowLayoutPanel1.Controls.Add(this.bacc);
-			this.flowLayoutPanel1.Controls.Add(this.help);
 			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 452);
@@ -135,16 +135,6 @@ namespace QEMUWF
 			this.bacc.Text = "Back";
 			this.bacc.UseVisualStyleBackColor = true;
 			this.bacc.Click += new System.EventHandler(this.bacc_Click);
-			// 
-			// help
-			// 
-			this.help.Location = new System.Drawing.Point(8, 10);
-			this.help.Margin = new System.Windows.Forms.Padding(3, 10, 76, 3);
-			this.help.Name = "help";
-			this.help.Size = new System.Drawing.Size(108, 23);
-			this.help.TabIndex = 2;
-			this.help.Text = "there is no help.";
-			this.help.UseVisualStyleBackColor = true;
 			// 
 			// tabControl1
 			// 
@@ -478,6 +468,8 @@ namespace QEMUWF
 			// tabPage3
 			// 
 			this.tabPage3.BackColor = System.Drawing.SystemColors.Window;
+			this.tabPage3.Controls.Add(this.button2);
+			this.tabPage3.Controls.Add(this.comboBox6);
 			this.tabPage3.Controls.Add(this.textBox3);
 			this.tabPage3.Controls.Add(this.label14);
 			this.tabPage3.Controls.Add(this.label13);
@@ -496,27 +488,39 @@ namespace QEMUWF
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "tabPage3";
 			// 
+			// comboBox6
+			// 
+			this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox6.FormattingEnabled = true;
+			this.comboBox6.Items.AddRange(new object[] {
+            "MB",
+            "GB",
+            "TB"});
+			this.comboBox6.Location = new System.Drawing.Point(372, 110);
+			this.comboBox6.Name = "comboBox6";
+			this.comboBox6.Size = new System.Drawing.Size(50, 21);
+			this.comboBox6.TabIndex = 12;
+			// 
 			// textBox3
 			// 
-			this.textBox3.Location = new System.Drawing.Point(186, 117);
+			this.textBox3.Location = new System.Drawing.Point(274, 86);
 			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(96, 22);
+			this.textBox3.Size = new System.Drawing.Size(123, 22);
 			this.textBox3.TabIndex = 11;
-			this.textBox3.Text = "qcow2";
 			// 
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(51, 120);
+			this.label14.Location = new System.Drawing.Point(51, 91);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(46, 13);
+			this.label14.Size = new System.Drawing.Size(33, 13);
 			this.label14.TabIndex = 10;
-			this.label14.Text = "Format:";
+			this.label14.Text = "Path:";
 			// 
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(51, 208);
+			this.label13.Location = new System.Drawing.Point(51, 188);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(153, 13);
 			this.label13.TabIndex = 9;
@@ -525,9 +529,9 @@ namespace QEMUWF
 			// button1
 			// 
 			this.button1.Enabled = false;
-			this.button1.Location = new System.Drawing.Point(271, 226);
+			this.button1.Location = new System.Drawing.Point(398, 202);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(50, 22);
+			this.button1.Size = new System.Drawing.Size(24, 24);
 			this.button1.TabIndex = 8;
 			this.button1.Text = "...";
 			this.button1.UseVisualStyleBackColor = true;
@@ -536,15 +540,15 @@ namespace QEMUWF
 			// textBox2
 			// 
 			this.textBox2.Enabled = false;
-			this.textBox2.Location = new System.Drawing.Point(54, 226);
+			this.textBox2.Location = new System.Drawing.Point(54, 203);
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(212, 22);
+			this.textBox2.Size = new System.Drawing.Size(343, 22);
 			this.textBox2.TabIndex = 7;
 			// 
 			// checkBox1
 			// 
 			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(54, 145);
+			this.checkBox1.Location = new System.Drawing.Point(54, 135);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(184, 17);
 			this.checkBox1.TabIndex = 6;
@@ -554,15 +558,15 @@ namespace QEMUWF
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(51, 93);
+			this.label12.Location = new System.Drawing.Point(51, 113);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(132, 13);
+			this.label12.Size = new System.Drawing.Size(88, 13);
 			this.label12.TabIndex = 5;
-			this.label12.Text = "Size of the disk (in MBs):";
+			this.label12.Text = "Size of the disk:";
 			// 
 			// numericUpDown2
 			// 
-			this.numericUpDown2.Location = new System.Drawing.Point(186, 91);
+			this.numericUpDown2.Location = new System.Drawing.Point(274, 110);
 			this.numericUpDown2.Minimum = new decimal(new int[] {
             2,
             0,
@@ -580,7 +584,7 @@ namespace QEMUWF
 			// choosExistig
 			// 
 			this.choosExistig.AutoSize = true;
-			this.choosExistig.Location = new System.Drawing.Point(33, 188);
+			this.choosExistig.Location = new System.Drawing.Point(33, 165);
 			this.choosExistig.Name = "choosExistig";
 			this.choosExistig.Size = new System.Drawing.Size(107, 17);
 			this.choosExistig.TabIndex = 3;
@@ -630,6 +634,16 @@ namespace QEMUWF
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "tabPage5";
 			// 
+			// button2
+			// 
+			this.button2.Enabled = false;
+			this.button2.Location = new System.Drawing.Point(398, 85);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(24, 24);
+			this.button2.TabIndex = 13;
+			this.button2.Text = "...";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
 			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -641,6 +655,7 @@ namespace QEMUWF
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.HelpButton = true;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "Form3";
@@ -668,7 +683,6 @@ namespace QEMUWF
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button next;
-        private System.Windows.Forms.Button help;
         private QEMUWF.TabControlWithoutHeader tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -712,5 +726,7 @@ namespace QEMUWF
         private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.ComboBox comboBox5;
 		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.ComboBox comboBox6;
+		private System.Windows.Forms.Button button2;
 	}
 }
