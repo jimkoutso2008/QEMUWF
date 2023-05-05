@@ -1,23 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QEMUWF
 {
-    public partial class Form3 : Form
+	public partial class Form3 : Form
     {
         public Form3()
         {
             InitializeComponent();
         }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, comboBox4, tabControl1, numericUpDown1);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Core.Navigate(1, tabControl1);
@@ -40,9 +33,9 @@ namespace QEMUWF
             comboBox3.Items.Clear();
             comboBox5.Items.Clear();
             string cpu = comboBox2.GetItemText(comboBox2.SelectedItem);
-            radioButton1.Enabled = radioButton2.Enabled = radioButton3.Enabled = false;
+            radioButton2.Enabled = radioButton3.Enabled = false;
             List<string> cpus = new List<string>();
-            Core.QemuInvoke(cpu, ref cpus, "Available CPUs:", "-cpu ?");
+            Task.Factory.StartNew(() => Core.QemuInvoke(cpu, ref cpus, "Available CPUs:", "-cpu ?")).Wait();
             for (int i = 0; i < cpus.Count; i++)
 			{
                 comboBox3.Items.Add(cpus[i]);
@@ -57,14 +50,14 @@ namespace QEMUWF
                 comboBox3.SelectedIndex = 0;
             }
             List<string> machine = new List<string>();
-            Core.QemuInvoke(cpu, ref machine, "Supported machines are:", "-machine help");
+            Task.Factory.StartNew(() => Core.QemuInvoke(cpu, ref machine, "Supported machines are:", "-machine help")).Wait();
             for (int i = 0; i< machine.Count; i++)
 			{
                 comboBox5.Items.Add(machine[i]);
 			}
             comboBox5.SelectedIndex = 0;
             List<string> accel = new List<string>();
-            Core.QemuInvoke(cpu, ref accel, "Accelerators supported in QEMU binary:", "-accel ?");
+            Task.Factory.StartNew(() => Core.QemuInvoke(cpu, ref accel, "Accelerators supported in QEMU binary:", "-accel ?")).Wait();
             for (int i = 0; i < accel.Count; i++)
             {
                 if (accel[i] == "hax")
@@ -74,10 +67,6 @@ namespace QEMUWF
                 else if (accel[i] == "whpx")
 				{
                     radioButton3.Enabled = true;
-				}
-                else if (accel[i] == "tcg")
-				{
-                    radioButton1.Enabled = true;
 				}
             }
         }
@@ -132,5 +121,10 @@ namespace QEMUWF
             }
             catch { }
         }
+
+		private void Form3_Shown(object sender, EventArgs e)
+		{
+            Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, comboBox4, tabControl1, numericUpDown1);
+		}
 	}
 }

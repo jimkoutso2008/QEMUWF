@@ -25,7 +25,7 @@ namespace QEMUWF
                 string name = f[i].Name.Replace(".exe", "").Replace("qemu-system-", "");
                 if (name[name.Length - 1] != 'w')
                 {
-                    comboBox2.Items.Add(f[i].Name.Replace(".exe", "").Replace("qemu-system-", ""));
+                    comboBox2.Items.Add(name);
                 }
             }
 
@@ -47,8 +47,6 @@ namespace QEMUWF
             trackBar1.Minimum = 2;
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
-            tabControl.Location = new Point(0, -25);
-            tabControl.Size = new Size(438, 480);
             numericUpDown.Maximum = Environment.ProcessorCount;
         }
 
