@@ -20,10 +20,13 @@ namespace QEMUWF
             var f = dinfo.GetFiles("qemu-system-*.exe");
             ulong h = info.TotalPhysicalMemory / (1024 * 1024);
             ulong v = h;
-
             for (int i=0; i<f.Length; i++)
             {
-                comboBox2.Items.Add(f[i].Name.Replace(".exe","").Replace("qemu-system-",""));
+                string name = f[i].Name.Replace(".exe", "").Replace("qemu-system-", "");
+                if (name[name.Length - 1] != 'w')
+                {
+                    comboBox2.Items.Add(f[i].Name.Replace(".exe", "").Replace("qemu-system-", ""));
+                }
             }
 
             foreach (ManagementObject mo in new ManagementObjectSearcher("select AdapterRAM from Win32_VideoController").Get())
