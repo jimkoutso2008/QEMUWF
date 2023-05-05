@@ -18,11 +18,13 @@ namespace QEMUWF
             string s = Properties.Settings.Default.qemuPath;
             if (string.IsNullOrEmpty(s) || !Directory.Exists(s) || (Directory.Exists(s) && !File.Exists(Path.Combine(s, "qemu-system-i386.exe"))))
             {
-                FolderBrowserDialog browserDialog = new FolderBrowserDialog();
-                browserDialog.Description = "Select the folder where Qemu is installed.";
-                browserDialog.ShowDialog();
-                Properties.Settings.Default.qemuPath = browserDialog.SelectedPath;
-                Properties.Settings.Default.Save();
+                FolderPicker dialog = new FolderPicker();
+                dialog.Title = "Select the folder where Qemu is installed.";
+                if (dialog.ShowDialog(IntPtr.Zero) == true)
+                {
+                    Properties.Settings.Default.qemuPath = dialog.ResultPath;
+                    Properties.Settings.Default.Save();
+                }
             }
             Application.Run(new Form1());
         }
