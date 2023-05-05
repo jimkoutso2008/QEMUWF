@@ -143,8 +143,7 @@ namespace QEMUWF
             while (!proc.StandardOutput.EndOfStream)
             {
                 string line = proc.StandardOutput.ReadLine();
-                // fix the regex
-                const string reduceMultiSpace = @"\s+\s+\s+\s+.+";
+                const string reduceMultiSpace = @"(?<!^)\s{2}(?!$).+";
                 line = Regex.Replace(line, reduceMultiSpace, "");
                 if (!string.IsNullOrWhiteSpace(line) && line.Contains("Recognized CPUID flags:"))
                 {
