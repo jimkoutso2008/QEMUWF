@@ -40,7 +40,7 @@ namespace QEMUWF
                     }
 					else
 					{
-                        Application.Exit();
+                        return;
 					}
                 }
             }
