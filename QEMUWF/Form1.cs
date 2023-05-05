@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace QEMUWF
@@ -29,6 +30,40 @@ namespace QEMUWF
                 Form3 j = new Form3();
                 j.ShowDialog();
             }
+		}
+
+		private void qemuPath_Click(object sender, EventArgs e)
+		{
+            bool found = false;
+            while (!found)
+            {
+                FolderPicker dialog = new FolderPicker
+                {
+                    Title = "Select the folder where QEMU is installed"
+                };
+                if (dialog.ShowDialog(IntPtr.Zero) == true)
+                {
+                    if (File.Exists(Path.Combine(dialog.ResultPath, "qemu-system-i386.exe")))
+                    {
+                        Properties.Settings.Default.qemuPath = dialog.ResultPath;
+                        Properties.Settings.Default.Save();
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("QEMU not found");
+                    }
+                }
+				else
+				{
+                    break;
+				}
+            }
+        }
+
+		private void exitMenu_Click(object sender, EventArgs e)
+		{
+            Application.Exit();
 		}
 	}
 }

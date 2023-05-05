@@ -41,6 +41,9 @@
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.newButton = new System.Windows.Forms.ToolBarButton();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.menuItem2 = new System.Windows.Forms.MenuItem();
+			this.exitMenu = new System.Windows.Forms.MenuItem();
+			this.qemuPath = new System.Windows.Forms.MenuItem();
 			groupBox1 = new System.Windows.Forms.GroupBox();
 			groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -74,7 +77,10 @@
 			// 
 			this.fileToolStripMenuItem.Index = 0;
 			this.fileToolStripMenuItem.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.newToolStripMenuItem});
+            this.newToolStripMenuItem,
+            this.qemuPath,
+            this.menuItem2,
+            this.exitMenu});
 			this.fileToolStripMenuItem.Text = "File";
 			// 
 			// newToolStripMenuItem
@@ -132,6 +138,23 @@
 			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
 			this.imageList1.Images.SetKeyName(0, "plus.png");
 			// 
+			// menuItem2
+			// 
+			this.menuItem2.Index = 2;
+			this.menuItem2.Text = "-";
+			// 
+			// exitMenu
+			// 
+			this.exitMenu.Index = 3;
+			this.exitMenu.Text = "Exit";
+			this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
+			// 
+			// qemuPath
+			// 
+			this.qemuPath.Index = 1;
+			this.qemuPath.Text = "Change QEMU path";
+			this.qemuPath.Click += new System.EventHandler(this.qemuPath_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +185,9 @@
 		private System.Windows.Forms.ToolBar toolBar1;
 		private System.Windows.Forms.ToolBarButton newButton;
 		private System.Windows.Forms.ImageList imageList1;
+		private System.Windows.Forms.MenuItem qemuPath;
+		private System.Windows.Forms.MenuItem menuItem2;
+		private System.Windows.Forms.MenuItem exitMenu;
 	}
 }
 

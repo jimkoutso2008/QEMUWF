@@ -31,7 +31,6 @@ namespace QEMUWF
                         {
                             Properties.Settings.Default.qemuPath = dialog.ResultPath;
                             Properties.Settings.Default.Save();
-                            found = true;
                             break;
                         }
 						else
@@ -39,6 +38,10 @@ namespace QEMUWF
                             MessageBox.Show("QEMU not found");
 						}
                     }
+					else
+					{
+                        Application.Exit();
+					}
                 }
             }
             Application.Run(new Form1());
