@@ -63,6 +63,7 @@ namespace QEMUWF
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.button2 = new System.Windows.Forms.Button();
 			this.comboBox6 = new System.Windows.Forms.ComboBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@ namespace QEMUWF
 			this.label11 = new System.Windows.Forms.Label();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
-			this.button2 = new System.Windows.Forms.Button();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -173,7 +173,7 @@ namespace QEMUWF
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(61, 284);
+			this.label4.Location = new System.Drawing.Point(59, 181);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(101, 13);
 			this.label4.TabIndex = 5;
@@ -190,14 +190,14 @@ namespace QEMUWF
             "Mac OS",
             "BSD",
             "UNIX"});
-			this.comboBox1.Location = new System.Drawing.Point(165, 281);
+			this.comboBox1.Location = new System.Drawing.Point(163, 178);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(207, 21);
 			this.comboBox1.TabIndex = 4;
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(165, 251);
+			this.textBox1.Location = new System.Drawing.Point(163, 148);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(207, 22);
 			this.textBox1.TabIndex = 3;
@@ -207,7 +207,7 @@ namespace QEMUWF
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(61, 254);
+			this.label3.Location = new System.Drawing.Point(59, 151);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(59, 13);
 			this.label3.TabIndex = 2;
@@ -218,7 +218,7 @@ namespace QEMUWF
 			this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(15, 64);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(392, 151);
+			this.label2.Size = new System.Drawing.Size(392, 63);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Welcome to the Wizard.\r\nWe will guide you you at making your VM.\r\nSo lets start w" +
     "ith the name and the OS.";
@@ -488,30 +488,42 @@ namespace QEMUWF
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "tabPage3";
 			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(371, 102);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(24, 24);
+			this.button2.TabIndex = 13;
+			this.button2.Text = "...";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
 			// comboBox6
 			// 
 			this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox6.FormattingEnabled = true;
+			this.comboBox6.IntegralHeight = false;
+			this.comboBox6.ItemHeight = 13;
 			this.comboBox6.Items.AddRange(new object[] {
             "MB",
             "GB",
             "TB"});
-			this.comboBox6.Location = new System.Drawing.Point(372, 110);
+			this.comboBox6.Location = new System.Drawing.Point(349, 127);
 			this.comboBox6.Name = "comboBox6";
-			this.comboBox6.Size = new System.Drawing.Size(50, 21);
+			this.comboBox6.Size = new System.Drawing.Size(46, 21);
 			this.comboBox6.TabIndex = 12;
 			// 
 			// textBox3
 			// 
-			this.textBox3.Location = new System.Drawing.Point(274, 86);
+			this.textBox3.Location = new System.Drawing.Point(54, 103);
 			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(123, 22);
+			this.textBox3.Size = new System.Drawing.Size(316, 22);
 			this.textBox3.TabIndex = 11;
 			// 
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(51, 91);
+			this.label14.Location = new System.Drawing.Point(51, 87);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(33, 13);
 			this.label14.TabIndex = 10;
@@ -520,7 +532,7 @@ namespace QEMUWF
 			// label13
 			// 
 			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(51, 188);
+			this.label13.Location = new System.Drawing.Point(51, 208);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(153, 13);
 			this.label13.TabIndex = 9;
@@ -529,7 +541,7 @@ namespace QEMUWF
 			// button1
 			// 
 			this.button1.Enabled = false;
-			this.button1.Location = new System.Drawing.Point(398, 202);
+			this.button1.Location = new System.Drawing.Point(371, 223);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(24, 24);
 			this.button1.TabIndex = 8;
@@ -540,15 +552,15 @@ namespace QEMUWF
 			// textBox2
 			// 
 			this.textBox2.Enabled = false;
-			this.textBox2.Location = new System.Drawing.Point(54, 203);
+			this.textBox2.Location = new System.Drawing.Point(54, 224);
 			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(343, 22);
+			this.textBox2.Size = new System.Drawing.Size(316, 22);
 			this.textBox2.TabIndex = 7;
 			// 
 			// checkBox1
 			// 
 			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(54, 135);
+			this.checkBox1.Location = new System.Drawing.Point(54, 152);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(184, 17);
 			this.checkBox1.TabIndex = 6;
@@ -558,7 +570,7 @@ namespace QEMUWF
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(51, 113);
+			this.label12.Location = new System.Drawing.Point(51, 131);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(88, 13);
 			this.label12.TabIndex = 5;
@@ -566,14 +578,14 @@ namespace QEMUWF
 			// 
 			// numericUpDown2
 			// 
-			this.numericUpDown2.Location = new System.Drawing.Point(274, 110);
+			this.numericUpDown2.Location = new System.Drawing.Point(290, 127);
 			this.numericUpDown2.Minimum = new decimal(new int[] {
             2,
             0,
             0,
             0});
 			this.numericUpDown2.Name = "numericUpDown2";
-			this.numericUpDown2.Size = new System.Drawing.Size(96, 22);
+			this.numericUpDown2.Size = new System.Drawing.Size(57, 22);
 			this.numericUpDown2.TabIndex = 4;
 			this.numericUpDown2.Value = new decimal(new int[] {
             2,
@@ -584,7 +596,7 @@ namespace QEMUWF
 			// choosExistig
 			// 
 			this.choosExistig.AutoSize = true;
-			this.choosExistig.Location = new System.Drawing.Point(33, 165);
+			this.choosExistig.Location = new System.Drawing.Point(33, 186);
 			this.choosExistig.Name = "choosExistig";
 			this.choosExistig.Size = new System.Drawing.Size(107, 17);
 			this.choosExistig.TabIndex = 3;
@@ -595,7 +607,7 @@ namespace QEMUWF
 			// 
 			this.cretNew.AutoSize = true;
 			this.cretNew.Checked = true;
-			this.cretNew.Location = new System.Drawing.Point(33, 70);
+			this.cretNew.Location = new System.Drawing.Point(33, 66);
 			this.cretNew.Name = "cretNew";
 			this.cretNew.Size = new System.Drawing.Size(107, 17);
 			this.cretNew.TabIndex = 2;
@@ -633,16 +645,6 @@ namespace QEMUWF
 			this.tabPage5.Size = new System.Drawing.Size(430, 423);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "tabPage5";
-			// 
-			// button2
-			// 
-			this.button2.Enabled = false;
-			this.button2.Location = new System.Drawing.Point(398, 85);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(24, 24);
-			this.button2.TabIndex = 13;
-			this.button2.Text = "...";
-			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// Form3
 			// 

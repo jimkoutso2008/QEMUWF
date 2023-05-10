@@ -35,15 +35,15 @@
 			this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);
 			this.fileToolStripMenuItem = new System.Windows.Forms.MenuItem();
 			this.newToolStripMenuItem = new System.Windows.Forms.MenuItem();
+			this.qemuPath = new System.Windows.Forms.MenuItem();
+			this.menuItem2 = new System.Windows.Forms.MenuItem();
+			this.exitMenu = new System.Windows.Forms.MenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.MenuItem();
 			this.thereIsNoHelpToolStripMenuItem = new System.Windows.Forms.MenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.MenuItem();
 			this.toolBar1 = new System.Windows.Forms.ToolBar();
 			this.newButton = new System.Windows.Forms.ToolBarButton();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-			this.menuItem2 = new System.Windows.Forms.MenuItem();
-			this.exitMenu = new System.Windows.Forms.MenuItem();
-			this.qemuPath = new System.Windows.Forms.MenuItem();
 			groupBox1 = new System.Windows.Forms.GroupBox();
 			groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -88,6 +88,23 @@
 			this.newToolStripMenuItem.Index = 0;
 			this.newToolStripMenuItem.Text = "New VM";
 			this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+			// 
+			// qemuPath
+			// 
+			this.qemuPath.Index = 1;
+			this.qemuPath.Text = "Change QEMU path";
+			this.qemuPath.Click += new System.EventHandler(this.qemuPath_Click);
+			// 
+			// menuItem2
+			// 
+			this.menuItem2.Index = 2;
+			this.menuItem2.Text = "-";
+			// 
+			// exitMenu
+			// 
+			this.exitMenu.Index = 3;
+			this.exitMenu.Text = "Exit";
+			this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
 			// 
 			// toolStripMenuItem1
 			// 
@@ -137,23 +154,6 @@
 			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
 			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
 			this.imageList1.Images.SetKeyName(0, "plus.png");
-			// 
-			// menuItem2
-			// 
-			this.menuItem2.Index = 2;
-			this.menuItem2.Text = "-";
-			// 
-			// exitMenu
-			// 
-			this.exitMenu.Index = 3;
-			this.exitMenu.Text = "Exit";
-			this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
-			// 
-			// qemuPath
-			// 
-			this.qemuPath.Index = 1;
-			this.qemuPath.Text = "Change QEMU path";
-			this.qemuPath.Click += new System.EventHandler(this.qemuPath_Click);
 			// 
 			// Form1
 			// 

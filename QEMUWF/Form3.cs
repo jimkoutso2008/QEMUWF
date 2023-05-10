@@ -82,9 +82,13 @@ namespace QEMUWF
             if (cretNew.Checked)
             {
                 comboBox6.Enabled = true;
+                button2.Enabled = true;
             }
             else
+            {
                 comboBox6.Enabled = false;
+                button2.Enabled = false;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -134,6 +138,19 @@ namespace QEMUWF
 		{
             Core.SetStaticControls(trackBar1, trackBar2, comboBox1, comboBox2, comboBox4, tabControl1, numericUpDown1);
             comboBox6.SelectedIndex = 0;
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+            SaveFileDialog sv = new SaveFileDialog();
+            sv.Title = "Please choose a location for the new virtual hard disk file";
+            sv.DefaultExt = ".qcow2";
+            sv.Filter =
+                "QEMU Copy On Write 2 (*.qcow2)|*.qcow2|QEMU Copy On Write (*.qcow)|*.qcow|Microsoft Virtual Hard Disk (*.vhd)|*.vhd|Microsoft Virtual Hard Disk Extended (*.vhdx)|*.vhdx|Raw disk (*.raw)|*.raw|Raw disk (*.img)|*.img|All files (*.*)|*.*";
+            if (sv.ShowDialog() == DialogResult.OK)
+            {
+                textBox3.Text = sv.FileName;
+            }
 		}
 	}
 }
